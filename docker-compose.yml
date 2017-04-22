@@ -48,6 +48,9 @@ services:
       networks:
         - frontend
         - backend
+      environment:
+        - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
+
 
 ### PHP-FPM Container #######################################
 
@@ -250,8 +253,9 @@ services:
 
     postgres:
       build: ./postgres
-      volumes:
-        - ${DATA_SAVE_PATH}/postgres:/var/lib/postgresql/data
+# FIX FOR WINDOWS
+#      volumes:
+#        - ${DATA_SAVE_PATH}/postgres:/var/lib/postgresql/data
       ports:
         - "${POSTGRES_PORT}:5432"
       environment:

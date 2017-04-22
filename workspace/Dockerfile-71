@@ -96,7 +96,7 @@ RUN if [ ${INSTALL_XDEBUG} = true ]; then \
     echo "alias phpunit='php -dzend_extension=xdebug.so /var/www/vendor/bin/phpunit'" >> ~/.bashrc \
 ;fi
 # ADD for REMOTE debugging
-COPY ./xdebug.ini /etc/php/7.1/cli/conf.d/xdebug.ini
+COPY ./xdebug.ini /etc/php/7.1/cli/conf.d/20-xdebug.ini
 
 #####################################
 # Blackfire:

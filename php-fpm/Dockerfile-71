@@ -231,6 +231,15 @@ RUN if [ ${INSTALL_GHOSTSCRIPT} = true ]; then \
     ghostscript \
 ;fi
 
+#####################################
+# IMAGICK:
+#####################################
+
+RUN apt-get -y update && \
+    apt-get install pkg-config imagemagick libmagickwand-dev -y && \
+    pecl install imagick && \
+    docker-php-ext-enable imagick
+
 #
 #--------------------------------------------------------------------------
 # Final Touch
