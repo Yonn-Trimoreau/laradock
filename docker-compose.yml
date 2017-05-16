@@ -8,6 +8,8 @@ services:
       image: tianon/true
       volumes:
         - ${APPLICATION}:/var/www
+        - node_modules:/var/www/playsoop-frontend/node_modules
+        - yarn_cache:/root/.cache
 
 ### Workspace Utilities Container ###########################
 
@@ -615,4 +617,8 @@ volumes:
   elasticsearch-data:
     driver: "local"
   elasticsearch-plugins:
+    driver: "local"
+  node_modules:
+    driver: "local"
+  yarn_cache:
     driver: "local"
