@@ -52,6 +52,8 @@ services:
         - backend
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
+      ports:
+        - "3000:3000"
 
 
 ### PHP-FPM Container #######################################
